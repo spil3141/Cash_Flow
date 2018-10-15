@@ -14,9 +14,9 @@ int main(void)
 	int Menu_Input;
 	Boot_Screen();
 
-	/*printf("\n\n\n\n\n\n\n\n\n\t\t\t\tMenu : \n\n\t\t\t\t\t1.°ÔÀÓ ½ÃÀÛ\n");
-	printf("\t\t\t\t\t2.°ÔÀÓ ¹æ¹ı\n");
-	printf("\t\t\t\t\t3.°ÔÀÓ Á¾·á\n");
+	/*printf("\n\n\n\n\n\n\n\n\n\t\t\t\tMenu : \n\n\t\t\t\t\t1.ê²Œì„ ì‹œì‘\n");
+	printf("\t\t\t\t\t2.ê²Œì„ ë°©ë²•\n");
+	printf("\t\t\t\t\t3.ê²Œì„ ì¢…ë£Œ\n");
 	Menu_Input = (_getch()) - 48;
 	switch (Menu_Input)
 	{
@@ -28,45 +28,45 @@ int main(void)
 	// ============== Set up ======================= // 
 	Reset();
 	Setup();
-	gotoxytext(37, 39, "¡ã");
+	gotoxytext(37, 39, "â–²");
 	//===================Testing =====================//
 
 	//============================================ Game Play ====================================//
 	while (1)
 	{
-		//================================ Round ½ÃÀÛ ¶§  ============================================//
-		gotoxytext(52, 32, "1¹öÆ° <ÁÖ»çÀ§>    2 ¹öÆ° <Repay>    3 ¹öÆ° <¿îÇà>");
+		//================================ Round ì‹œì‘ ë•Œ  ============================================//
+		gotoxytext(52, 32, "1ë²„íŠ¼ <ì£¼ì‚¬ìœ„>    2 ë²„íŠ¼ <Repay>    3 ë²„íŠ¼ <ìš´í–‰>");
 		Input = _getch();   
 		//Input = ONE;  auto play 
 		switch (Input)
 		{
-		case ONE:   //========================= ÁÖ»çÀ§ ±¼¸®´Ù =============//   # 1
+		case ONE:   //========================= ì£¼ì‚¬ìœ„ êµ´ë¦¬ë‹¤ =============//   # 1
 			Move =Roll_Dice();
 			for (int i = 0; i < Move; i++) {
 				Player_1.Player_Object.Current_Position++;
-				//gotoxyint(52, 30, Player_1.Player_Object.Current_Position); //Position¸¦ º¸°í ½ÍÀ¸¸é
+				//gotoxyint(52, 30, Player_1.Player_Object.Current_Position); //Positionë¥¼ ë³´ê³  ì‹¶ìœ¼ë©´
 				Move_To_Position(Player_1.Player_Object.Current_Position);
 				//=========================================================//
-				//===================  Æ¯º°ÇÑ °æ¿ì =========================//
+				//===================  íŠ¹ë³„í•œ ê²½ìš° =========================//
 				//=========================================================//
 				
-				//====  ºÀ±Ş À§Ä¡¿¡ ÀÖ´Â °æ¿ì ===//
+				//====  ë´‰ê¸‰ ìœ„ì¹˜ì— ìˆëŠ” ê²½ìš° ===//
 				if (Player_1.Player_Object.Current_Position == 7 || Player_1.Player_Object.Current_Position == 15 || Player_1.Player_Object.Current_Position == 23)
 				{
-					GamePlay(7); // ºÀ±Ş À§Ä¡¿¡ ÀÖ´Â °æ¿ì 
+					GamePlay(7); // ë´‰ê¸‰ ìœ„ì¹˜ì— ìˆëŠ” ê²½ìš° 
 				}
 
 				//=========================================================//
 				if (Player_1.Player_Object.Current_Position > 23)
 				{
-					GamePlay(24);  // 24 À§Áö¿¡  ÀÖ´Â °æ¿ì 
+					GamePlay(24);  // 24 ìœ„ì§€ì—  ìˆëŠ” ê²½ìš° 
 					Player_1.Player_Object.Current_Position -= 24;
 				}
 
 				Sleep(200);
 			}
 
-			GamePlay(Player_1.Player_Object.Current_Position);  // 1 - 23 À§Ä¡¿¡ ÀÖ´Â °æ¿ì 
+			GamePlay(Player_1.Player_Object.Current_Position);  // 1 - 23 ìœ„ì¹˜ì— ìˆëŠ” ê²½ìš° 
 			break;
 		case TWO:   // REPAY           # 2
 			break;
@@ -74,12 +74,12 @@ int main(void)
 			printf("3");
 			DiceShape(3);
 			break;
-		case FOUR:  // Àç¹«Á¦Ç¥ º¸±â    # 4
-			Player_Setup_Employee(1);   // 1 ´Â Player Employment profile 
-			Financial_Statement();  // Àç¹«Á¦Ç¥ º¸±â 
+		case FOUR:  // ì¬ë¬´ì œí‘œ ë³´ê¸°    # 4
+			Player_Setup_Employee(1);   // 1 ëŠ” Player Employment profile 
+			Financial_Statement();  // ì¬ë¬´ì œí‘œ ë³´ê¸° 
 			Reset(); // or system("cls");
-			Setup(); // º¸µå¸¦ º¸±â 
-			Move_To_Position(Player_1.Player_Object.Current_Position);   // ÇÃ·¹ÀÌ¾î º¸±â 
+			Setup(); // ë³´ë“œë¥¼ ë³´ê¸° 
+			Move_To_Position(Player_1.Player_Object.Current_Position);   // í”Œë ˆì´ì–´ ë³´ê¸° 
 			break;
 		default:
 			system("cls");
@@ -87,8 +87,8 @@ int main(void)
 			return 1;
 		}
 
-		//================================ Round ³¡³¯ ¶§  ============================================//
-		gotoxytext(52, 32, "2 ¹öÆ° :Repay    3 ¹öÆ° : ¿îÇà    6 ¹öÆ° : Round Á¾·á");
+		//================================ Round ëë‚  ë•Œ  ============================================//
+		gotoxytext(52, 32, "2 ë²„íŠ¼ :Repay    3 ë²„íŠ¼ : ìš´í–‰    6 ë²„íŠ¼ : Round ì¢…ë£Œ");
 		Input = _getch(); 
 
 		switch (Input)
@@ -99,11 +99,11 @@ int main(void)
 			printf("3");
 			DiceShape(3);
 			break;
-		case FOUR:  // Àç¹«Á¦Ç¥ º¸±â    # 4
-			Financial_Statement();  // Àç¹«Á¦Ç¥ º¸±â 
+		case FOUR:  // ì¬ë¬´ì œí‘œ ë³´ê¸°    # 4
+			Financial_Statement();  // ì¬ë¬´ì œí‘œ ë³´ê¸° 
 			Reset(); // or system("cls");
-			Setup(); // º¸µå¸¦ º¸±â 
-			Move_To_Position(Player_1.Player_Object.Current_Position);   // ÇÃ·¹ÀÌ¾î º¸±â 
+			Setup(); // ë³´ë“œë¥¼ ë³´ê¸° 
+			Move_To_Position(Player_1.Player_Object.Current_Position);   // í”Œë ˆì´ì–´ ë³´ê¸° 
 			break;
 		case SIX:   // END ROUND       # 6 
 			break;
