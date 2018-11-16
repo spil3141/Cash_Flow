@@ -1,3 +1,3 @@
 # Cash_Flow
-This project was inspire by the Cash flow board game relating to Robert Kayosaki ( arthour of the book: rich dad poor dad ) . 
-The Cashflow Board-game console version written in C.  
+This project was inspired by the Cash flow board game created by Robert Kayosaki from his book "rich dad poor dad"  . 
+A cashflow Board-game console version written in C.  
